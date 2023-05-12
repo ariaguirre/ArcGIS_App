@@ -1,0 +1,125 @@
+#form-container{
+    height: 40%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    align-items: start;
+    margin-top: 5rem;
+}
+
+label{
+    font-weight: bold;
+}
+
+
+#viewDiv {
+    padding: 20px;
+    margin: auto;
+    height: 80%;
+    width: 60%;
+    position: relative;
+  }
+
+h1{
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+
+
+/* form input[type="text"],
+form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+  } */
+
+#formContainer{
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.input-label{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#formContainer label{
+    margin-bottom: 2rem;
+}
+
+#formContainer input{
+    border-radius: 10px;
+    border: 1px solid darkgray;
+    padding: 4px;
+    width: 60%;
+    height: 40%;
+}
+
+#submitBtn, #resetBtn{
+    display:inline-flexbox;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-right: 1rem;
+  }
+  
+  #submitBtn{
+    background-color: #5bb8ee;
+    border: 1px solid rgba(52, 119, 206, 0.747);
+  }
+
+  #submitBtn:hover{
+    background-color: #1158a3c2;
+  }
+  #resetBtn{
+    background-color: #be4242be;
+  }
+
+  #resetBtn:hover{
+    background-color: #ad2e2ecc;
+  }
+
+  h2{
+    font-size: 20px;
+    width: 50%;
+    left: 30%;
+    position:relative;
+    margin-top: 0.5rem;
+  }

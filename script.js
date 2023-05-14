@@ -8,7 +8,7 @@ resetBtn.addEventListener('click', function() {
 });
 
 require([
-    "esri/config","esri/Map", "esri/views/MapView", "esri/Graphic","esri/layers/GraphicsLayer", "esri/layers/FeatureLayer", "esri/PopupTemplate"], function(esriConfig,Map, MapView, Graphic, GraphicsLayer, FeatureLayer,PopupTemplate) {
+    "esri/config","esri/Map", "esri/views/MapView", "esri/Graphic","esri/layers/GraphicsLayer", "esri/PopupTemplate", "esri/widgets/Popup", "esri/popup/FieldInfo"], function(esriConfig,Map, MapView, Graphic, GraphicsLayer,PopupTemplate, Popup, FieldInfo) {
 
     esriConfig.apiKey = "AAPK5c4057f6254f47a8a1d70e67fa7d3e3ciHxO76UsQKm3ksmdEBxSn6EtZ-X_X-oxrfrS023GVLhwOB8R3ZBhQm86-WYc1qPt";
 
@@ -46,9 +46,11 @@ require([
          Descripcion: description,
          Direccion: address,
          Telefono: phone,
+         Coordenadas: coordinates,
          Categoria: category
        }
     };
+
     // console.log("point:", point)
     const simpleMarkerSymbol = {
        type: "simple-marker",
@@ -59,34 +61,33 @@ require([
        }
     };
 
-    const pointGraphic = new Graphic({
+    let pointGraphic = new Graphic({
         geometry: point,
-        symbol: simpleMarkerSymbol
+        symbol: simpleMarkerSymbol,
+        attributes: point.attributes,
+        popupTemplate:{
+          title: point.attributes.Descripcion,
+          content:[{
+            type: "fields", 
+            fieldInfos: [{
+              fieldName: "Direccion"
+            },
+          {
+            fieldName: "Telefono"
+          },
+          {
+            fieldName: "Coordenadas"
+          }, 
+          {
+            fieldName: "Categoria"
+          }
+          ]
+          }]}
     });
-        graphicsLayer.add(pointGraphic);
-        console.log("pointGraphic:", pointGraphic);
+        view.graphics.add(pointGraphic);
+        // console.log("pointGraphic:", pointGraphic);
 
-
-    const newPopup = {
-        "title": "Información",
-        "content": [{
-            "Descripcion: ": point.attributes.Descripcion,
-            "Dirección: ": point.attributes.Direccion,
-            "Teléfono: ": point.attributes.Telefono,
-            "Categoría: ": point.attributes.Categoria,
-            "Longitud: ": point.longitude,
-            "Latitud: ": point.latitude,
-        }]
-      }
-
-    const pointPopup = new FeatureLayer({
-        url: "http://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/origins/FeatureServer/0",
-        outFields: ["*"],
-        popupTemplate: newPopup
-      });
-      console.log("newPopup:", newPopup)
-      console.log("point:", point)
-      map.add(pointPopup);
+    
 
 });
 });

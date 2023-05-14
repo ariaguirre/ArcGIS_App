@@ -59,6 +59,7 @@ form textarea {
 
 #formContainer{
     width: 50%;
+    height: auto;
     margin: 0 auto;
     border: 1px solid grey;
     border-radius: 10px;
@@ -74,7 +75,7 @@ form textarea {
 }
 
 #formContainer label{
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 #formContainer input{

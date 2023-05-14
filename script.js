@@ -8,7 +8,7 @@ resetBtn.addEventListener('click', function() {
 });
 
 require([
-    "esri/config","esri/Map", "esri/views/MapView", "esri/Graphic","esri/layers/GraphicsLayer", "esri/PopupTemplate", "esri/widgets/Popup", "esri/popup/FieldInfo"], function(esriConfig,Map, MapView, Graphic, GraphicsLayer,PopupTemplate, Popup, FieldInfo) {
+    "esri/config","esri/Map", "esri/views/MapView", "esri/Graphic","esri/layers/GraphicsLayer", "esri/PopupTemplate", "esri/widgets/Popup", "esri/popup/FieldInfo", "esri/widgets/Search"], function(esriConfig,Map, MapView, Graphic, GraphicsLayer,PopupTemplate, Popup, FieldInfo, Search) {
 
     esriConfig.apiKey = "AAPK5c4057f6254f47a8a1d70e67fa7d3e3ciHxO76UsQKm3ksmdEBxSn6EtZ-X_X-oxrfrS023GVLhwOB8R3ZBhQm86-WYc1qPt";
 
@@ -23,6 +23,14 @@ require([
       container: "viewDiv"
     });
 
+    const searchWidget = new Search({
+      view: view
+    });
+    
+    view.ui.add(searchWidget,{
+      position: 'top-right',
+      index: 2
+    })
 
     submitBtn.addEventListener('click', function(event){
     event.preventDefault();
@@ -87,8 +95,7 @@ require([
         view.graphics.add(pointGraphic);
         // console.log("pointGraphic:", pointGraphic);
 
-    
-
 });
+
 });
 

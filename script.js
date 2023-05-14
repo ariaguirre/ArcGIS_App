@@ -8,7 +8,7 @@ resetBtn.addEventListener('click', function() {
 });
 
 require([
-    "esri/config","esri/Map", "esri/views/MapView", "esri/Graphic","esri/layers/GraphicsLayer", "esri/PopupTemplate", "esri/widgets/Popup", "esri/popup/FieldInfo", "esri/widgets/Search"], function(esriConfig,Map, MapView, Graphic, GraphicsLayer,PopupTemplate, Popup, FieldInfo, Search) {
+    "esri/config","esri/Map", "esri/views/MapView", "esri/Graphic","esri/layers/GraphicsLayer", "esri/widgets/Search"], function(esriConfig,Map, MapView, Graphic, GraphicsLayer, Search) {
 
     esriConfig.apiKey = "AAPK5c4057f6254f47a8a1d70e67fa7d3e3ciHxO76UsQKm3ksmdEBxSn6EtZ-X_X-oxrfrS023GVLhwOB8R3ZBhQm86-WYc1qPt";
 
@@ -59,7 +59,6 @@ require([
        }
     };
 
-    // console.log("point:", point)
     const simpleMarkerSymbol = {
        type: "simple-marker",
        color: [226, 119, 40],  
@@ -69,7 +68,7 @@ require([
        }
     };
 
-    let pointGraphic = new Graphic({
+    const pointGraphic = new Graphic({
         geometry: point,
         symbol: simpleMarkerSymbol,
         attributes: point.attributes,
@@ -93,9 +92,6 @@ require([
           }]}
     });
         view.graphics.add(pointGraphic);
-        // console.log("pointGraphic:", pointGraphic);
-
 });
-
 });
 

@@ -8,7 +8,7 @@ resetBtn.addEventListener('click', function() {
 });
 
 require([
-    "esri/config","esri/Map", "esri/views/MapView", "esri/Graphic","esri/layers/GraphicsLayer", "esri/widgets/Search"], function(esriConfig,Map, MapView, Graphic, GraphicsLayer, Search) {
+    "esri/config","esri/Map", "esri/views/MapView", "esri/Graphic","esri/layers/GraphicsLayer", "esri/widgets/Search", ], function(esriConfig,Map, MapView, Graphic, GraphicsLayer, Search) {
 
     esriConfig.apiKey = "AAPK5c4057f6254f47a8a1d70e67fa7d3e3ciHxO76UsQKm3ksmdEBxSn6EtZ-X_X-oxrfrS023GVLhwOB8R3ZBhQm86-WYc1qPt";
 
@@ -44,8 +44,7 @@ require([
     const longitude = parseFloat(coordinates[0]);
     const latitude = parseFloat(coordinates[1]);
     let category = document.getElementById("category").value;
-
-   
+    
     const point = { 
        type: "point",
        longitude: longitude,
@@ -92,6 +91,5 @@ require([
           }]}
     });
         view.graphics.add(pointGraphic);
+  });
 });
-});
-

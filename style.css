@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: rgb(234, 233, 240);
+  background-color: rgb(235, 235, 235);
 }
 
 #formContainer{
@@ -35,7 +35,7 @@ h1{
   margin-bottom: 1.5rem;
   padding: 20px;
   top: 0;
-  background-color: #004C8B;
+  background-color: #6f008b;
   color: rgb(255, 255, 255);
 }
 

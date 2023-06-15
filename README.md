@@ -6,6 +6,9 @@ Una de las características principales de esta aplicación es la capacidad de g
 
 Al hacer clic en cualquier punto en el mapa, la aplicación muestra un cuadro de información detallada del lugar seleccionado. Esto brinda a los usuarios acceso rápido y fácil a datos importantes sobre cada ubicación, mejorando su experiencia de uso.
 
+### :mag: Echa un vistazo!
+https://arcgisapp.netlify.app/
+
 ----
 
 This application allows you to search for and save locations using both addresses and coordinates. Additionally, a form and a search bar have been implemented to facilitate interaction with the user.
@@ -18,3 +21,6 @@ By clicking on any point on the map, the application displays a detailed informa
 ### Tecnologías
 Javascript, HTML, CSS.
 ArcGIS Api for Javascript.
+
+### :mag: Take a look!
+https://arcgisapp.netlify.app/
